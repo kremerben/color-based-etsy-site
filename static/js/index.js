@@ -143,6 +143,13 @@ $('#getOne').on('click', function() {
     });
 });
 
+// MORE INFO BUTTON
+$(document).on('click', '#moreInfo', function() {
+    $(this).siblings('.moreInfoBox').toggle('slow');
+    $(this).text(function(i, text){
+        return text === "More Information" ? "Hide Information" : "More Information";
+    });
+});
 
 
 //

@@ -1,7 +1,8 @@
 body {
-    font-family: Rokkitt, Helvetica, sans-serif;
-    font-weight: 400;
+    font-family: Lato, Helvetica, sans-serif;
+    font-weight: 300;
     font-size: 1.9em;
+    margin-top: 30px;
 }
 
 strong {
@@ -115,32 +116,65 @@ button {
 }
 
 .row {
-    background-color: cornflowerblue;
     overflow: overlay;
-    border: 1px solid lightgray;
+    border: none;
     margin-top: 10px;
 }
-
-.description {
-    max-height: 70px;
+p.showhide {
+    margin:0;
+    white-space: pre-line;
+}
+.description, blockquote {
+    max-height: 120px;
     overflow: hidden;
-    margin-bottom: 0;
-    line-height: 1.0em;
-font-size: .9em;
+    margin-bottom: 5px;
+        white-space: pre;
+
 }
 
 .item_image {
-    border: 1px solid #f5f5f5;
+    border: 1px solid #555352;
     height:100%;
 }
 
 .item_image img {
     width: 250px;
-
-
 }
 
 .tags-display {
     line-height: 1.0em;
 font-size: .9em;
+}
+
+#colorSelector, #colorSelector div  {
+    width: 99% !important;
+    height: 130px;
+}
+#colorSelector h1 {
+    padding:10px 22px;
+    text-shadow: 0px 0px 6px #FFF;
+}
+.colorpicker {
+    left: 40% !important;
+    top: 20px !important;
+}
+
+.colorpicker_rgb_r, .colorpicker_rgb_g, .colorpicker_rgb_b, .colorpicker_hsb_s,  .colorpicker_hsb_h, .colorpicker_hsb_b, .colorpicker_hex {
+	display: none;
+}
+.store_item {
+    border: 1px solid lightgray;
+        background-color: cornflowerblue;
+padding: 10px;
+}
+
+.colorpicker_submit, .colorpicker_submit.colorpicker_focus {
+    width: 103px !important;
+    height: 103px !important;
+    left: 215px !important;
+    top: 55px !important;
+background-size: cover !important;
+    background-position: center !important;
+    /*background:  cover transparent !important;*/
+    background-image: url(../img/search.png) !important;
 }

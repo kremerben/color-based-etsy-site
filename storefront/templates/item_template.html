@@ -4,93 +4,28 @@
     </div>
     <div class="col-md-7">
         <div class="categoryPath-display">
-        {% if item_info.category_path %}
-            {% for path in item_info.category_path %}
-{#                <a href="{% url "view_racer" actor.id %}" >#}
-                {{ path }} +-
-            {% endfor %}
-        {% endif %}
         </div>
         <h2>{{ item_info.title }}</h2>
         <p>price: {{ item_info.price }}</p>
-        <p class="description showhide">{{ item_info.description }}</p>
-        <div class="style-display">
-        <strong>Style</strong>
-        {% if item_info.style %}
-            {% for style in item_info.style %}
-{#                <a href="{% url "view_racer" actor.id %}" >#}
-                {{ style }},
-            {% endfor %}
+        <p class="description showhide">{{ item_info.description }}<br>
+         {% if item_info.category_path %}
+            {% for path in item_info.category_path %}{{ path }} ++ {% endfor %}
         {% endif %}
-        </div>
-
-        <div class="tags-display">
-        <strong>Tags</strong>
-        {% if item_info.tags %}
-            {% for tag in item_info.tags %}
-{#                <a href="{% url "view_racer" actor.id %}" >#}
-                {{ tag }},
-            {% endfor %}
-        {% endif %}
-        </div>
+           {% if item_info.style %}
+                <strong>Style: </strong>{% for style in item_info.style %}{{ style }}, {% endfor %}
+            {% endif %}
+            {% if item_info.tags %}
+                <strong>Tags: </strong>{% for tag in item_info.tags %}{{ tag }}, {% endfor %}
+            {% endif %}
+{#            </div>#}
+    </p>
     </div>
 
     <div class="col-md-2">
-        <button id="moreInfo">More Information</button>
-        <div class="moreInfoBox" style="display:none;" >
-            <p>Original Listing: {{ item_info.listing_url }}</p>
-            <p>Run Time: {{ movie_info.runtime }}<br>
-            Critic Rating: {{ movie_info.critic_rating }}<br>
-                Audience Rating: {{ movie_info.audience_score }}
-            </p>
-{#    <p>Synopsis: {{ movie_info.synopsis }}</p>#}
+        <button id="moreInfo"><a href="{{ item_info.listing_url }}" target="_blank"> Original Listing</a> </button>
+
         </div>
     </div>
 
 
 </div>
-{##}
-{#<img src="'+itemInfo.image_url+'"> <h1 style="display:inline-block;background-color:#'+etsy_color+'">' + itemInfo.title + '</h1> <div style="display:inline-block;height:30px;width:30px;background-color:#'+etsy_color+'"></div>');#}
-{##}
-{##}
-{##}
-{##}
-{##}
-{#<div class="movieInfo row">#}
-{#    <div class="col-md-3 movie_thumb"><br>#}
-{#        <button id="favorite" data-id="{{ movie_info.index }}" type="button" class="btn btn-default btn-lg">#}
-{#        Favorite This Movie#}
-{#        </button>#}
-{#        <span class="glyphicon glyphicon-star"></span>#}
-{#        <div class="multiSave">#}
-{#            <label >Multi-Save</label>#}
-{#            <input type="checkbox" id="{{movie_info.index}}">#}
-{#        </div>#}
-{#        <button id="removeFave">Remove Favorite</button>#}
-{#    </div>#}
-{#    <div class="col-md-7">#}
-{#        <h2>{{ movie_info.title }}</h2>#}
-{#        <p>Release Year: {{ movie_info.release_year }}</p>#}
-{#        <p class="synopsis showhide">{{ movie_info.synopsis }}</p>#}
-{#        <hr>#}
-{#        {% if actors %}#}
-{#        <div class="black-bar">#}
-{#            <h3>Actors:</h3>#}
-{#        </div>#}
-{#        <div class="actor-display">#}
-{#    {{ movie_info.actors }}#}
-{#            {% for actor in movie_info.actors %}#}
-{#                <a href="{% url "view_racer" actor.id %}" >#}
-{#                <li>{{ actor.name }} - {{ actor.characters|first }}<br>#}
-{#                </li>#}
-{#            {% endfor %}#}
-{#        {% endif %}#}
-{#        </div>#}
-{#    </div>#}
-{#<button id="favorite" data-id="{{ movie_info.index }}">#}
-{#    Favorite This Movie#}
-{#</button>#}
-{#    <div class='clearfix'></div>#}
-{#    <div class="actorInfo row"><h3>Actors</h3>#}
-{#    </div>#}
-{#</div>#}
